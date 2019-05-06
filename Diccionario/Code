@@ -1,0 +1,70 @@
+#include <iostream>
+#include <conio.h>
+#include <time.h>
+
+using namespace std;
+
+void Iverb(){//-------------- Irregular Verbs -------------------
+    //////////////// Spanish ////////////////////////////////
+    string  span[100]={"surgir","despertar", "soportar", "golpear", "empezar", "doblar", "apostar", "morder", "sangrar", "soplar",
+                        "criar"};
+    //////////////// English Infinitive /////////////////////                   
+    string eng1[100]={"arise", "awake", "bear", "beat", "begin", "bend", "bet", "bite", "bleed", "blow",
+                        "breed"};
+    //////////////// English Past //////////////////////////
+    string eng2[100]={"arose", "awoke", "bore", "beat", "began", "bent", "bet", "bit", "bled", "blew",
+                        "bred"};
+    ////////////////////////////////////////////////////////
+    srand(time(NULL));
+    int n;
+    n=rand()%11;
+    ////////////////////////////////////////////////////////
+    string res;
+    cout<<span[n]<<" es: "; cin>>res;
+    if(eng1[n]==res){
+        cout<<"Respuesta correcta"<<endl;
+    }else{
+        cout<<"Equivocado"<<endl;
+        cout<<eng1[n]<<endl;
+    }
+    cout<<"Past--> "<<eng2[n]<<endl<<endl;
+}
+
+void Rverbs(){//------------- Regular Verbs -----------------------
+    //////////////// Spanish ////////////////////////////////
+    string  span[100]={"actuar","agregar", "preguntar", "responder", "llegar", "pertenecer", "suplicar", "creer", "llamar", "cambiar",
+                        "cargar"};
+    //////////////// English ////////////////////////////////                   
+    string eng1[100]={"act", "add", "ask", "answer", "arrive", "belong", "beg", "believe", "call", "change",
+                        "charge"};
+    ////////////////////////////////////////////////////////
+    srand(time(NULL));
+    int n;
+    n=rand()%11;
+    ////////////////////////////////////////////////////////
+    string res;
+    cout<<span[n]<<" es: "; cin>>res;
+    if(eng1[n]==res){
+        cout<<"Respuesta correcta"<<endl;
+    }else{
+        cout<<"Equivocado"<<endl;
+        cout<<eng1[n]<<endl;
+    }
+    //cout<<"Past--> "<<eng1[n]<<"ed"<<endl;
+}
+
+//////////////////////////////////////////////////////
+
+int main(){
+    string ans;
+    do{
+    cout<<endl;
+    Iverb();
+    Rverbs();
+    cout<<endl<<"To continue, write yes"<<endl;
+    cout<<"Do you want to continue?"<<endl;cin>>ans;
+    }while(ans=="yes"||ans=="YES"||ans=="Yes");
+
+    system("pause");
+    return 0;
+}
